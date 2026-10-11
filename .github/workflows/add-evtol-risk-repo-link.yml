@@ -1,0 +1,45 @@
+name: Add eVTOL risk repository link
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/add-evtol-risk-repo-link.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add GitHub repository link
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+          repo_url = 'https://github.com/Orbolato/eVTOL-Battery-Thermal-Runaway-Risk'
+          old = '<a href="https://www.researchgate.net/publication/412950226_Literature-Informed_Stochastic_Scenario_Analysis_of_Thermal-Runaway_Risk_During_eVTOL_Battery_Fast_Charging" target="_blank" rel="noopener noreferrer">ResearchGate</a></p></article>'
+          new = '<a href="https://www.researchgate.net/publication/412950226_Literature-Informed_Stochastic_Scenario_Analysis_of_Thermal-Runaway_Risk_During_eVTOL_Battery_Fast_Charging" target="_blank" rel="noopener noreferrer">ResearchGate</a> | <a href="' + repo_url + '" target="_blank" rel="noopener noreferrer">GitHub repository</a></p></article>'
+
+          if repo_url not in text:
+              if text.count(old) != 1:
+                  raise SystemExit(f'Expected exactly one target snippet, found {text.count(old)}')
+              text = text.replace(old, new, 1)
+              path.write_text(text, encoding='utf-8')
+
+          Path('.github/workflows/add-evtol-risk-repo-link.yml').unlink()
+          PY
+      - name: Commit update
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html .github/workflows/add-evtol-risk-repo-link.yml
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Add eVTOL battery-risk GitHub repository link [skip ci]'
+          git push
