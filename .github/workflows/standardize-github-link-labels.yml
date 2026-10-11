@@ -1,0 +1,61 @@
+name: Standardize GitHub repository link labels
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/standardize-github-link-labels.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Standardize visible repository-link labels
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(text, old, new, label):
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"Expected exactly 1 occurrence for {label}, found {count}")
+              return text.replace(old, new)
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          replacements = [
+              ('<a href="https://github.com/projetosigmasky/uam_airspace" target="_blank" rel="noopener noreferrer">Source code</a>', '<a href="https://github.com/projetosigmasky/uam_airspace" target="_blank" rel="noopener noreferrer">GitHub repository</a>', 'UAM airspace dashboard'),
+              ('<a href="https://github.com/projetosigmasky/uam_metrics" target="_blank" rel="noopener noreferrer">Source code</a>', '<a href="https://github.com/projetosigmasky/uam_metrics" target="_blank" rel="noopener noreferrer">GitHub repository</a>', 'UAM metrics dashboard'),
+              ('<a href="https://github.com/Orbolato/Runway-Capacity-Optimization-with-RL" target="_blank" rel="noopener noreferrer">Code</a>', '<a href="https://github.com/Orbolato/Runway-Capacity-Optimization-with-RL" target="_blank" rel="noopener noreferrer">GitHub repository</a>', 'SITRAER repo'),
+              ('<a href="https://github.com/Orbolato/BNN-Flight-Delay-Prediction" target="_blank" rel="noopener noreferrer">Code repository</a>', '<a href="https://github.com/Orbolato/BNN-Flight-Delay-Prediction" target="_blank" rel="noopener noreferrer">GitHub repository</a>', 'BNN repo'),
+              ('<a href="https://github.com/Orbolato/MMP" target="_blank" rel="noopener noreferrer">MMP code</a>', '<a href="https://github.com/Orbolato/MMP" target="_blank" rel="noopener noreferrer">GitHub repository (MMP)</a>', 'MMP repo'),
+              ('<a href="https://github.com/Orbolato/Trees" target="_blank" rel="noopener noreferrer">Related DT/RF code</a>', '<a href="https://github.com/Orbolato/Trees" target="_blank" rel="noopener noreferrer">GitHub repository (Trees)</a>', 'Trees repo'),
+              ('<a href="https://github.com/Orbolato/ANN_SVM" target="_blank" rel="noopener noreferrer">Code</a>', '<a href="https://github.com/Orbolato/ANN_SVM" target="_blank" rel="noopener noreferrer">GitHub repository</a>', 'ANN_SVM repo'),
+              ('<a href="https://github.com/Orbolato/KNN" target="_blank" rel="noopener noreferrer">KNN/DWNN code</a>', '<a href="https://github.com/Orbolato/KNN" target="_blank" rel="noopener noreferrer">GitHub repository</a>', 'KNN repo'),
+          ]
+          for old, new, label in replacements:
+              s = replace_once(s, old, new, label)
+          p.write_text(s, encoding='utf-8')
+
+          p = Path('publications/bnn-flight-delay/index.html')
+          s = p.read_text(encoding='utf-8')
+          s = replace_once(
+              s,
+              '<a class="button" href="https://github.com/Orbolato/BNN-Flight-Delay-Prediction" target="_blank" rel="noopener noreferrer">Code repository</a>',
+              '<a class="button" href="https://github.com/Orbolato/BNN-Flight-Delay-Prediction" target="_blank" rel="noopener noreferrer">GitHub repository</a>',
+              'BNN landing-page repo button'
+          )
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit changes and remove one-time workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm .github/workflows/standardize-github-link-labels.yml
+          git add -A
+          git commit -m "Standardize GitHub repository link labels [skip ci]"
+          git push
