@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://orbolato.github.io/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://orbolato.github.io/publications/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://orbolato.github.io/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://orbolato.github.io/publications/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://orbolato.github.io/publications/tactical-atfm-reinforcement-learning/</loc><lastmod>2026-10-08</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
   <url><loc>https://orbolato.github.io/publications/runway-capacity-reinforcement-learning/</loc><lastmod>2026-10-08</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
   <url><loc>https://orbolato.github.io/dasc2026-paper-276/</loc><lastmod>2026-10-11</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
@@ -13,5 +13,6 @@
   <url><loc>https://orbolato.github.io/publications/aeromedical-ground-time/</loc><lastmod>2026-10-11</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
   <url><loc>https://orbolato.github.io/publications/actual-takeoff-weight-ml/</loc><lastmod>2026-10-08</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
   <url><loc>https://orbolato.github.io/publications/cpt-multiple-model-ml/</loc><lastmod>2026-10-11</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://orbolato.github.io/publications/cpt-kernel-clustering/</loc><lastmod>2026-10-12</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
   <url><loc>https://orbolato.github.io/publications/cpt-knn-dwnn/</loc><lastmod>2026-10-11</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
 </urlset>
