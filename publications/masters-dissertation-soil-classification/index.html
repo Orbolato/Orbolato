@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow,max-snippet:-1">
+  <title>Application of Machine Learning Techniques for Soil Classification from CPTU | Lucas Orbolato Carvalho</title>
+  <meta name="description" content="2018 master's dissertation at the Aeronautics Institute of Technology (ITA) on supervised and unsupervised machine learning for CPTU-based soil classification.">
+  <link rel="canonical" href="https://orbolato.github.io/publications/masters-dissertation-soil-classification/">
+  <link rel="me" href="https://orcid.org/0000-0002-8402-5832">
+
+  <meta name="citation_title" content="Application of Machine Learning Techniques for Soil Classification from CPTU">
+  <meta name="citation_author" content="Lucas Orbolato Carvalho">
+  <meta name="citation_publication_date" content="2018/12/27">
+  <meta name="citation_dissertation_institution" content="Instituto Tecnológico de Aeronáutica">
+
+  <meta name="DC.Title" content="Application of Machine Learning Techniques for Soil Classification from CPTU">
+  <meta name="DC.Creator" content="Lucas Orbolato Carvalho">
+  <meta name="DC.Date" content="2018-12-27">
+  <meta name="DC.Publisher" content="Instituto Tecnológico de Aeronáutica">
+  <meta name="DC.Type" content="Text.Thesis">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Application of Machine Learning Techniques for Soil Classification from CPTU",
+    "datePublished": "2018-12-27",
+    "genre": "Master's dissertation",
+    "educationalLevel": "Master of Science",
+    "author": {
+      "@type": "Person",
+      "name": "Lucas Orbolato Carvalho",
+      "url": "https://orbolato.github.io/",
+      "sameAs": ["https://orcid.org/0000-0002-8402-5832"]
+    },
+    "contributor": {
+      "@type": "Person",
+      "name": "Dimas Betioli Ribeiro",
+      "description": "Advisor"
+    },
+    "publisher": {
+      "@type": "CollegeOrUniversity",
+      "name": "Instituto Tecnológico de Aeronáutica"
+    },
+    "about": [
+      "cone penetration testing",
+      "soil classification",
+      "machine learning",
+      "distance-weighted nearest neighbors",
+      "decision trees",
+      "random forests",
+      "artificial neural networks",
+      "support vector machines",
+      "ensemble learning",
+      "kernel k-means",
+      "kernel x-means"
+    ],
+    "url": "https://orbolato.github.io/publications/masters-dissertation-soil-classification/"
+  }
+  </script>
+
+  <style>
+    :root{--b:#075985;--i:#14212b;--m:#5f6f7b;--l:#d7e4ea;--s:#eef7fa}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f8fbfc;color:var(--i);line-height:1.6}
+    a{color:var(--b)}
+    .wrap{width:min(900px,calc(100% - 32px));margin:auto}
+    .top{background:linear-gradient(135deg,#064d72,#0a7595);color:#fff;padding:42px 0}
+    .top h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.12;margin:.3rem 0 1rem}
+    .card{background:#fff;border:1px solid var(--l);border-radius:16px;padding:26px;margin:24px 0}
+    .meta,.small{color:var(--m)}
+    .links{display:flex;gap:10px;flex-wrap:wrap}
+    .button{display:inline-block;text-decoration:none;font-weight:700;border:1px solid #b9d5df;background:var(--s);padding:8px 12px;border-radius:9px}
+    .citation{white-space:pre-wrap;background:#f4f7f8;border:1px solid var(--l);border-radius:10px;padding:14px;overflow:auto;font-family:monospace;font-size:.86rem}
+    .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .related article{border:1px solid var(--l);border-radius:12px;padding:15px;background:#fbfdfe}
+    .related h3{font-size:1rem;margin:0 0 6px}
+    footer{padding:5px 0 38px;color:var(--m)}
+  </style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div>Master's dissertation · Aeronautics Institute of Technology (ITA) · 2018</div>
+    <h1>Application of Machine Learning Techniques for Soil Classification from CPTU</h1>
+    <div>Lucas Orbolato Carvalho · Advisor: Dimas Betioli Ribeiro</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <h2>Dissertation</h2>
+    <p class="meta"><strong>Master of Science in Aeronautical Infrastructure Engineering</strong>, field of Airport Infrastructure, Instituto Tecnológico de Aeronáutica (ITA), São José dos Campos, Brazil. Final document dated December 27, 2018.</p>
+    <div class="links">
+      <a class="button" href="https://orbolato.github.io/publications/">Publications</a>
+      <a class="button" href="https://orbolato.github.io/">Author homepage</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Overview</h2>
+    <p>This dissertation develops a multidimensional machine-learning framework for soil classification from cone penetration test (CPT/CPTU) data. The work combines supervised and unsupervised learning, evaluates raw and normalized CPT measurements, examines the contribution of depth and geological age, and applies data cleaning, balancing, transformation, statistical comparison, and 10-fold cross-validation.</p>
+    <p>The supervised study evaluates distance-weighted nearest neighbors, boosted decision trees, random forests, artificial neural networks, support vector machines, and a heterogeneous multiple-model predictor. The unsupervised study develops general and case-based soil classifications using kernel k-means and kernel x-means, followed by neural-network models designed to reproduce the derived classes.</p>
+    <p>The dissertation uses a broad CPT dataset assembled from 179 soundings and serves as the common research foundation for several later publications and public code repositories.</p>
+  </section>
+
+  <section class="card">
+    <h2>Research lineage and related implementations</h2>
+    <p class="small">The repositories below preserve and document different branches of the dissertation's machine-learning work. They should be cited together with the corresponding journal or conference publication when used scientifically.</p>
+    <div class="related">
+      <article>
+        <h3><a href="https://github.com/Orbolato/KNN">KNN</a></h3>
+        <div class="small">Distance-based feature analysis and DWKNN lineage. Companion to the 2019 <em>Soils and Rocks</em> article.</div>
+      </article>
+      <article>
+        <h3><a href="https://github.com/Orbolato/Trees">Trees</a></h3>
+        <div class="small">Recovered decision-tree and random-forest predecessor implementation used in the supervised research line.</div>
+      </article>
+      <article>
+        <h3><a href="https://github.com/Orbolato/ANN_SVM">ANN_SVM</a></h3>
+        <div class="small">Recovered ANN/SVM implementation lineage associated with the 2019 CILAMCE comparison and later supervised work.</div>
+      </article>
+      <article>
+        <h3><a href="https://github.com/Orbolato/MMP">MMP</a></h3>
+        <div class="small">Multiple-model predictor and supervised classification lineage associated with the 2021 <em>Soils and Rocks</em> article.</div>
+      </article>
+      <article>
+        <h3><a href="https://github.com/Orbolato/CPT-Kernel-Clustering">CPT-Kernel-Clustering</a></h3>
+        <div class="small">Kernel k-means, kernel x-means, and ANN reproduction of derived soil classes. Companion to the 2020 <em>Soils and Rocks</em> article.</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Related peer-reviewed publications</h2>
+    <p><a href="/publications/cpt-knn-dwnn/">Soil Classification System from Cone Penetration Test Data Applying Distance-Based Machine Learning Algorithms</a> · <em>Soils and Rocks</em>, 2019.</p>
+    <p><a href="/publications/cpt-kernel-clustering/">Application of kernel k-means and kernel x-means clustering to obtain soil classes from cone penetration test data</a> · <em>Soils and Rocks</em>, 2020.</p>
+    <p><a href="/publications/cpt-multiple-model-ml/">A multiple model machine learning approach for soil classification from cone penetration test data</a> · <em>Soils and Rocks</em>, 2021.</p>
+  </section>
+
+  <section class="card">
+    <h2>Citation</h2>
+    <div class="citation">CARVALHO, Lucas Orbolato. Application of Machine Learning Techniques for Soil Classification from CPTU. 2018. 101 f. Master's dissertation (Aeronautical Infrastructure Engineering, Airport Infrastructure) - Instituto Tecnológico de Aeronáutica, São José dos Campos, Brazil, 2018. Advisor: Dimas Betioli Ribeiro.</div>
+  </section>
+
+  <section class="card">
+    <h2>BibTeX</h2>
+    <div class="citation">@mastersthesis{Carvalho2018CPTU,
+  author  = {Carvalho, Lucas Orbolato},
+  title   = {Application of Machine Learning Techniques for Soil Classification from CPTU},
+  school  = {Instituto Tecnológico de Aeronáutica},
+  address = {São José dos Campos, Brazil},
+  year    = {2018},
+  type    = {Master's dissertation}
+}</div>
+  </section>
+</main>
+
+<footer><div class="wrap">Lucas Orbolato Carvalho · <a href="https://orbolato.github.io/publications/">Publications</a></div></footer>
+</body>
+</html>
