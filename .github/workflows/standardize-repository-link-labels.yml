@@ -1,0 +1,62 @@
+name: standardize-repository-link-labels
+
+on:
+  push:
+    branches: [style/standardize-github-repository-labels]
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: style/standardize-github-repository-labels
+          fetch-depth: 0
+
+      - name: Standardize visible GitHub repository labels
+        shell: python
+        run: |
+          from pathlib import Path
+
+          old = "Code & reproducibility"
+          new = "GitHub repository"
+          changed = []
+
+          for path in Path(".").rglob("*.html"):
+              text = path.read_text(encoding="utf-8")
+              if old in text:
+                  count = text.count(old)
+                  path.write_text(text.replace(old, new), encoding="utf-8")
+                  changed.append((str(path), count))
+
+          if not changed:
+              raise RuntimeError(f"No occurrences of {old!r} found")
+
+          print("Standardized labels:")
+          for path, count in changed:
+              print(f"  {path}: {count}")
+
+          remaining = []
+          for path in Path(".").rglob("*.html"):
+              if old in path.read_text(encoding="utf-8"):
+                  remaining.append(str(path))
+          if remaining:
+              raise RuntimeError(f"Unstandardized labels remain in: {remaining}")
+
+      - name: Validate diff
+        run: git diff --check
+
+      - name: Commit standardized labels
+        run: |
+          git config user.name "Lucas Orbolato Carvalho"
+          git config user.email "40774995+Orbolato@users.noreply.github.com"
+          git add '*.html' 'publications/**/*.html' 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No HTML changes to commit."
+            exit 0
+          fi
+          git commit -m "Standardize GitHub repository link labels"
+          git push origin HEAD:style/standardize-github-repository-labels
