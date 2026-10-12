@@ -1,0 +1,42 @@
+name: Fix kernel clustering homepage link
+
+on:
+  push:
+    branches: [fix/kernel-clustering-homepage-link]
+    paths:
+      - '.github/workflows/fix-kernel-homepage.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/kernel-clustering-homepage-link
+      - name: Add publication and repository links
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+          old = '''<article class="paper"><h3>Application of kernel k-means and kernel x-means clustering to obtain soil classes from cone penetration test data</h3><div class="meta">Lucas Orbolato Carvalho; Dimas Betioli Ribeiro. Soils and Rocks, 2020, 43(4), 607-618.</div><p><a href="https://doi.org/10.28927/SR.434607" target="_blank" rel="noopener noreferrer">DOI</a> | <a href="https://www.researchgate.net/publication/348099100_Application_of_kernel_k-means_and_kernel_x-means_clustering_to_obtain_soil_classes_from_cone_penetration_test_data" target="_blank" rel="noopener noreferrer">ResearchGate</a></p></article>'''
+          new = '''<article class="paper"><h3><a href="/publications/cpt-kernel-clustering/">Application of kernel k-means and kernel x-means clustering to obtain soil classes from cone penetration test data</a></h3><div class="meta">Lucas Orbolato Carvalho; Dimas Betioli Ribeiro. Soils and Rocks, 2020, 43(4), 607-618.</div><p><a href="https://doi.org/10.28927/SR.434607" target="_blank" rel="noopener noreferrer">DOI</a> | <a href="https://www.researchgate.net/publication/348099100_Application_of_kernel_k-means_and_kernel_x-means_clustering_to_obtain_soil_classes_from_cone_penetration_test_data" target="_blank" rel="noopener noreferrer">ResearchGate</a> | <a href="https://github.com/Orbolato/CPT-Kernel-Clustering" target="_blank" rel="noopener noreferrer">GitHub repository</a></p></article>'''
+          if old not in text:
+              raise SystemExit('Expected kernel-clustering homepage entry not found exactly once.')
+          if text.count(old) != 1:
+              raise SystemExit(f'Expected exactly one match, found {text.count(old)}.')
+          path.write_text(text.replace(old, new), encoding='utf-8', newline='\n')
+          PY
+          rm .github/workflows/fix-kernel-homepage.yml
+      - name: Commit fix
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html .github/workflows/fix-kernel-homepage.yml
+          git commit -m 'Add kernel clustering repository to homepage'
+          git push origin HEAD:fix/kernel-clustering-homepage-link
