@@ -31,6 +31,22 @@
   "knowsAbout":["Machine Learning","Air Traffic Flow Management","Air Traffic Flow and Capacity Management","Reinforcement Learning","Runway Capacity Management","Demand-Capacity Balancing","Urban Air Mobility","Advanced Air Mobility","Airspace Corridor Design","Aviation Performance Evaluation","eVTOL","Aviation Machine Learning","Uncertainty Quantification"]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Manuscript Watch",
+  "alternateName": "Submission Tracker App",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Android",
+  "softwareVersion": "0.1.8",
+  "description": "Experimental open-source Android application for tracking academic journal manuscript submissions and revisions with local status history and best-effort publisher website checks.",
+  "author": {"@type": "Person", "name": "Lucas Orbolato Carvalho", "url": "https://orbolato.github.io/"},
+  "codeRepository": "https://github.com/Orbolato/Submission-Tracker-App",
+  "license": "https://github.com/Orbolato/Submission-Tracker-App/blob/main/LICENSE",
+  "url": "https://github.com/Orbolato/Submission-Tracker-App"
+}
+</script>
 <style>
 :root{--blue:#075985;--blue2:#0c6f97;--ink:#14212b;--muted:#5f6f7b;--line:#d7e4ea;--soft:#eef7fa;--paper:#fff;--shadow:0 10px 28px rgba(10,52,72,.08)}
 *{box-sizing:border-box}
@@ -67,6 +83,7 @@ h2{color:var(--blue);margin-top:0;letter-spacing:-.02em}
 .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .project-card{border:1px solid var(--line);border-radius:14px;padding:19px;background:#fff}
 .project-card h3{margin:4px 0 8px;color:#15384a;font-size:1.08rem}
+.software-card{grid-column:1/-1}
 .project-badge{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#315d71;background:var(--soft);border:1px solid #d2e5eb;border-radius:999px;padding:4px 8px}
 .project-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;font-size:.9rem;font-weight:700}
 .project-links a{text-decoration:none}.project-links a:hover{text-decoration:underline}
@@ -90,7 +107,7 @@ footer{padding:8px 0 40px;color:#60727e;font-size:.88rem}
     <div class="profile-wrap"><img class="profile-photo" src="assets/profile.webp" alt="Portrait of Lucas Orbolato Carvalho" width="520" height="513"></div>
   </div>
 </header>
-<nav><div class="wrap nav"><a href="#focus">Research focus</a><a href="#sigma-sky">SIGMA-Sky</a><a href="#atfm">ATFM & capacity</a><a href="#uam">Urban Air Mobility</a><a href="#analytics">Aviation analytics</a><a href="#geotechnics">Earlier ML work</a><a href="#theses">Theses & dissertations</a><a href="#citation">Citation guidance</a></div></nav>
+<nav><div class="wrap nav"><a href="#focus">Research focus</a><a href="#sigma-sky">SIGMA-Sky</a><a href="#software">Open-source software</a><a href="#atfm">ATFM & capacity</a><a href="#uam">Urban Air Mobility</a><a href="#analytics">Aviation analytics</a><a href="#geotechnics">Earlier ML work</a><a href="#theses">Theses & dissertations</a><a href="#citation">Citation guidance</a></div></nav>
 <main class="wrap" id="publications">
 <section class="section" id="focus"><h2>Research focus</h2><p>My current research develops operationally grounded machine-learning and reinforcement-learning methods for aviation systems in which demand, capacity, weather, and operational conditions evolve under uncertainty. A recurring objective is to connect data-driven methods with decisions that air traffic managers, airport operators, and future UAM service providers can interpret and evaluate.</p><div class="topics"><div class="topic"><strong>Air Traffic Flow and Capacity Management</strong><br>ATFM, ATFCM, miles-in-trail, tactical and strategic demand-capacity balancing.</div><div class="topic"><strong>Runway Capacity</strong><br>Runway configuration, arrival-departure allocation, weather uncertainty, operational forecasting.</div><div class="topic"><strong>Urban Air Mobility</strong><br>Vertiport networks, corridors, on-demand scheduling, eVTOL operations, emissions, and safety.</div><div class="topic"><strong>Probabilistic Aviation Analytics</strong><br>Bayesian neural networks, stochastic simulation, risk analysis, and open machine learning.</div></div></section>
 
@@ -117,6 +134,22 @@ footer{padding:8px 0 40px;color:#60727e;font-size:.88rem}
     <p class="small"><strong>Authors:</strong> Danilo de Farias Matos; Lucas Orbolato Carvalho; Mayara Condé Rocha Murça.</p>
     <div class="tags">UAM | performance evaluation | safety | capacity | predictability | equity</div>
     <div class="project-links"><a href="https://projetosigmasky.github.io/uam_metrics/" target="_blank" rel="noopener noreferrer">Open dashboard</a><a href="https://github.com/projetosigmasky/uam_metrics" target="_blank" rel="noopener noreferrer">GitHub repository</a></div>
+  </article>
+</div>
+</section>
+
+<section class="section" id="software">
+<h2>Open-source software</h2>
+<p>Independent software projects supporting research workflows and practical decision-making.</p>
+<div class="project-grid">
+  <article class="project-card software-card">
+    <span class="project-badge">Android app · Experimental</span>
+    <h3>Manuscript Watch — Submission Tracker App</h3>
+    <p>An open-source Android app for organizing academic journal submissions and revisions, with local status history, scheduled website checks, and notifications when a status change is detected. The experimental implementation focuses on Springer Nature submission-detail pages and Elsevier/Editorial Manager workflows, using authenticated journal sessions where permitted.</p>
+    <p class="small"><strong>Developer:</strong> Lucas Orbolato Carvalho. <strong>Version:</strong> 0.1.8 (experimental pre-release). <strong>License:</strong> MIT.</p>
+    <div class="tags">academic publishing | Android | Kotlin | manuscript tracking | journal submissions | open-source software</div>
+    <div class="project-links"><a href="https://github.com/Orbolato/Submission-Tracker-App" target="_blank" rel="noopener noreferrer">GitHub repository</a><a href="https://github.com/Orbolato/Submission-Tracker-App/releases/tag/v0.1.8" target="_blank" rel="noopener noreferrer">v0.1.8 pre-release</a></div>
+    <p class="small">Development prototype, not a production-ready monitoring service. Publisher logins and background status checks may require manual attention; verify important editorial decisions directly with the journal.</p>
   </article>
 </div>
 </section>
