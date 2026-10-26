@@ -20,6 +20,10 @@ Civil-Aeronautical Engineer and researcher at the Aeronautics Institute of Techn
 - **From avoided emissions to potential credits: A simulation-based case study of helicopter-to-eVTOL substitution in São Paulo** — *Case Studies on Transport Policy* (2026). DOI: https://doi.org/10.1016/j.cstp.2026.101884
 - **Stochastic Strategic Demand-Capacity Balancing Using Model-Free Reinforcement Learning** — 45th Digital Avionics Systems Conference (DASC), 2026.
 
+## Open-source software
+
+- **[Manuscript Watch — Submission Tracker App](https://github.com/Orbolato/Submission-Tracker-App)** — Experimental Android app for organizing journal submissions and revisions, checking supported publisher status pages, and recording local status history. The app focuses on Springer Nature and Elsevier/Editorial Manager workflows, with the limitations described in its repository. MIT License. [v0.1.8 pre-release](https://github.com/Orbolato/Submission-Tracker-App/releases/tag/v0.1.8).
+
 ## Links
 
 - Academic website: https://orbolato.github.io/
