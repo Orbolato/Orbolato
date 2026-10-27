@@ -23,7 +23,7 @@ Civil-Aeronautical Engineer and researcher at the Aeronautics Institute of Techn
 
 ## Open-source software
 
-- **[Manuscript Watch — Submission Tracker App](https://github.com/Orbolato/Submission-Tracker-App)** — Experimental Android app for organizing journal submissions and revisions, checking supported publisher status pages, and recording local status history. The app focuses on Springer Nature and Elsevier/Editorial Manager workflows, with the limitations described in its repository. MIT License. [v0.1.8 pre-release](https://github.com/Orbolato/Submission-Tracker-App/releases/tag/v0.1.8).
+- **[Manuscript Watch — Submission Tracker App](https://github.com/Orbolato/Submission-Tracker-App)** — Experimental Android app for organizing journal submissions and revisions, checking supported publisher status pages, and recording local status history. The app focuses on Springer Nature and Elsevier editorial and post-acceptance tracking, with local backup/restore and the limitations described in its repository. MIT License. [v0.2.0 source release](https://github.com/Orbolato/Submission-Tracker-App/releases/tag/v0.2.0).
 
 ## Links
 
