@@ -18,6 +18,7 @@ Civil-Aeronautical Engineer and researcher at the Aeronautics Institute of Techn
 - **Predicting Arrival Delays and Flight Time Deviations Under Uncertainty Using Bayesian Neural Networks** — *IEEE Access* (2026). DOI: https://doi.org/10.1109/ACCESS.2026.3709713
 - **Data-driven framework for urban air mobility planning: Integrating socioeconomic and operational factors for optimal network design in São Paulo, Brazil** — *Case Studies on Transport Policy* (2026). DOI: https://doi.org/10.1016/j.cstp.2026.101848
 - **From avoided emissions to potential credits: A simulation-based case study of helicopter-to-eVTOL substitution in São Paulo** — *Case Studies on Transport Policy* (2026). DOI: https://doi.org/10.1016/j.cstp.2026.101884
+- **Exposure-adjusted monitoring of flight cancellations for service-reliability governance: A Brazilian case study with a cross-country replication** — *Case Studies on Transport Policy* (2026). DOI: https://doi.org/10.1016/j.cstp.2026.102001
 - **Stochastic Strategic Demand-Capacity Balancing Using Model-Free Reinforcement Learning** — 45th Digital Avionics Systems Conference (DASC), 2026.
 
 ## Open-source software
